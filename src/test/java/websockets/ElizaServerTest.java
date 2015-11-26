@@ -72,7 +72,7 @@ public class ElizaServerTest {
 
 			@Override
 			public void onOpen(Session session, EndpointConfig config) {
-
+				//My message
 				session.getAsyncRemote().sendText("I really need to sleep more and have a nice beer-dream");
 
 				session.addMessageHandler(new MessageHandler.Whole<String>() {
@@ -93,6 +93,7 @@ public class ElizaServerTest {
 		String[] response =  { "What does that dream suggest to you?", "Do you dream often?",
 				"What persons appear in your dreams?", "Are you disturbed by your dreams?" };
 
+		//Since is not only one possible response, I have to use assertTrue and all the responses
 		assertTrue(response[0].equals(list.get(3)) || response[1].equals(list.get(3)) || response[2].equals(list.get(3))
 				|| response[3].equals(list.get(3)));
 
